@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fefcf0;
+  --foreground: #2d261e;
+  --primary-yellow: #fcd34d;
+  --primary-orange: #fbbf24;
+  --honey-brown: #78350f;
+  --accent-blue: #38bdf8;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Comic Sans MS', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 遊戲風按鈕與卡片 */
+.game-card {
+  background: #ffffff;
+  border: 4px solid #2d261e;
+  border-radius: 20px;
+  box-shadow: 5px 5px 0px #2d261e;
+  transition: all 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #2d261e;
+}
+
+.game-input {
+  border: 3px solid #2d261e;
+  border-radius: 12px;
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.game-input:focus {
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+}
+
+.game-button {
+  background: #fbbf24;
+  color: #78350f;
+  font-weight: bold;
+  border: 3px solid #2d261e;
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #2d261e;
+  transition: all 0.1s ease;
+}
+
+.game-button:hover {
+  background: #f59e0b;
+}
+
+.game-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #2d261e;
+}
+
+/* 嗡嗡蜜蜂飛行飄浮動畫 */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.bee-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 蜂巢格子裝飾背景 */
+.honeycomb-pattern {
+  background-color: #fefcf0;
+  background-image: radial-gradient(circle, #fde047 10%, transparent 11%),
+                    radial-gradient(circle, #fde047 10%, transparent 11%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  opacity: 0.15;
+}
+
+/* 閃爍效果 */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.pulse-soft {
+  animation: pulse-soft 2s infinite;
+}
